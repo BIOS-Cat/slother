@@ -1,2 +1,3 @@
-# slother
-Game Jam 2022 - Getting a Sloth across the road 
+# Start project
+
+This directory contains the start project for the tactical RPG movement tutorial series.
