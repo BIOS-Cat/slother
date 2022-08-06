@@ -17,7 +17,7 @@ var _units_that_acted := []
 
 onready var _unit_overlay: UnitOverlay = $UnitOverlay
 onready var _unit_path: UnitPath = $UnitPath
-
+onready var _end_turn_button: Button = $EndTurn
 
 func _ready() -> void:
 	_reinitialize()
@@ -144,3 +144,7 @@ func _on_Cursor_accept_pressed(cell: Vector2) -> void:
 func _on_Cursor_moved(new_cell: Vector2) -> void:
 	if _active_unit and _active_unit.is_selected:
 		_unit_path.draw(_active_unit.cell, new_cell)
+
+
+func _on_EndTurn_pressed():
+	_units_that_acted = []

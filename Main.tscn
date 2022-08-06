@@ -72,5 +72,13 @@ skin = ExtResource( 7 )
 move_range = 5
 skin_offset = Vector2( 6, 17 )
 
+[node name="EndTurn" type="Button" parent="GameBoard"]
+margin_left = 12.0
+margin_top = 18.0
+margin_right = 188.0
+margin_bottom = 65.0
+text = "End Turn"
+
 [connection signal="accept_pressed" from="GameBoard/Cursor" to="GameBoard" method="_on_Cursor_accept_pressed"]
 [connection signal="moved" from="GameBoard/Cursor" to="GameBoard" method="_on_Cursor_moved"]
+[connection signal="pressed" from="GameBoard/EndTurn" to="GameBoard" method="_on_EndTurn_pressed"]
