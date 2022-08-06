@@ -6,9 +6,9 @@
 [ext_resource path="res://GameBoard/Grid.tres" type="Resource" id=4]
 [ext_resource path="res://UnitOverlay/UnitOverlay.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameBoard/UnitPath.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Units/squirrel.png" type="Texture" id=7]
-[ext_resource path="res://Units/bear.png" type="Texture" id=8]
-[ext_resource path="res://Units/bugcat.png" type="Texture" id=9]
+[ext_resource path="res://Units/IMG_0141.PNG" type="Texture" id=7]
+[ext_resource path="res://Units/Image_20220806_105828.png" type="Texture" id=8]
+[ext_resource path="res://Units/Image_20220806_110023.png" type="Texture" id=9]
 [ext_resource path="res://Background/Map.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
