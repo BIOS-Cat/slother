@@ -133,5 +133,6 @@ func _on_Cursor_accept_pressed(cell: Vector2) -> void:
 
 ## Updates the interactive path's drawing if there's an active and selected unit.
 func _on_Cursor_moved(new_cell: Vector2) -> void:
+	print(new_cell)
 	if _active_unit and _active_unit.is_selected:
 		_unit_path.draw(_active_unit.cell, new_cell)

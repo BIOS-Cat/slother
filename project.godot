@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GameBoard/Cursor/Cursor.gd"
 }, {
+"base": "Unit",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Units/Enemy.gd"
+}, {
 "base": "Node2D",
 "class": "GameBoard",
 "language": "GDScript",
@@ -46,6 +51,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Cursor": "",
+"Enemy": "",
 "GameBoard": "",
 "Grid": "",
 "PathFinder": "",
