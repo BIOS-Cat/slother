@@ -13,6 +13,7 @@ export var grid: Resource
 var _units := {}
 var _active_unit: Unit
 var _walkable_cells := []
+var _units_that_acted := []
 
 onready var _unit_overlay: UnitOverlay = $UnitOverlay
 onready var _unit_path: UnitPath = $UnitPath
@@ -94,6 +95,8 @@ func _move_active_unit(new_cell: Vector2) -> void:
 	_deselect_active_unit()
 	_active_unit.walk_along(_unit_path.current_path)
 	yield(_active_unit, "walk_finished")
+	_units_that_acted.append(_active_unit)
+	print(_units_that_acted)
 	_clear_active_unit()
 
 
@@ -104,6 +107,12 @@ func _select_unit(cell: Vector2) -> void:
 		return
 
 	_active_unit = _units[cell]
+	
+	if _units_that_acted.has(_active_unit):
+		_deselect_active_unit()
+		_clear_active_unit()
+		return
+		
 	_active_unit.is_selected = true
 	_walkable_cells = get_walkable_cells(_active_unit)
 	_unit_overlay.draw(_walkable_cells)
@@ -133,6 +142,5 @@ func _on_Cursor_accept_pressed(cell: Vector2) -> void:
 
 ## Updates the interactive path's drawing if there's an active and selected unit.
 func _on_Cursor_moved(new_cell: Vector2) -> void:
-	print(new_cell)
 	if _active_unit and _active_unit.is_selected:
 		_unit_path.draw(_active_unit.cell, new_cell)
