@@ -18,6 +18,8 @@ var _units_that_acted := []
 onready var _unit_overlay: UnitOverlay = $UnitOverlay
 onready var _unit_path: UnitPath = $UnitPath
 onready var _end_turn_button: Button = $EndTurn
+onready var _enemies: Array = [$Enemy1, $Enemy2, $Enemy3, $Enemy4]
+
 
 func _ready() -> void:
 	_reinitialize()
@@ -147,4 +149,9 @@ func _on_Cursor_moved(new_cell: Vector2) -> void:
 
 
 func _on_EndTurn_pressed():
+	for enemy in _enemies:
+		print(enemy)
+		enemy.move()
+		yield(enemy, "walk_finished")	
+
 	_units_that_acted = []

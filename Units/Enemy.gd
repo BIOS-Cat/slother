@@ -2,6 +2,8 @@ tool
 class_name Enemy
 extends Unit
 
+var _astar := AStar2D.new()
+
 onready var _unit_path = $UnitPath
 
 func _ready() -> void:
@@ -14,10 +16,7 @@ func _ready() -> void:
 	# moving the unit.
 	if not Engine.editor_hint:
 		curve = Curve2D.new()
-	
-	var destination = Vector2(3, 2) 
-	
-	_unit_path.initialize([Vector2(1,2), Vector2(2,2), destination])
-	print("self cell")
-	print(self.cell)
-	_unit_path.draw(self.cell, destination)
+
+func move() -> void:
+	var current_path = PoolVector2Array([self.cell,Vector2(self.cell.x + self.move_range, self.cell.y)])
+	self.walk_along(current_path)
